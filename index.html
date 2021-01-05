@@ -76,6 +76,7 @@
     <script src="js/prism-live.js?load=css"></script>
     <script>
       const sections = document.querySelectorAll("section");
+      const classReg = /(\.[a-z])/gi;
 
       sections.forEach((section, i) => {
         const styleTag = section.querySelector(".editor > style");
@@ -83,13 +84,23 @@
         const storageKey = `exercise-${i + 1}`;
 
         const init = () => {
+          const parentClass =
+            "parent-" + section.querySelector("article>div").className;
+          section.classList.add(parentClass);
+          function prefix(str) {
+            return str.replaceAll(
+              classReg,
+              (match) => `.${parentClass} ${match}`
+            );
+          }
           if (localStorage.getItem(storageKey)) {
             _tA.value = localStorage.getItem(storageKey);
-            styleTag.innerHTML = _tA.value;
+
+            styleTag.innerHTML = prefix(_tA.value);
           }
 
           _tA.addEventListener("input", (e) => {
-            styleTag.innerHTML = e.target.value;
+            styleTag.innerHTML = prefix(e.target.value);
             localStorage.setItem(storageKey, _tA.value);
           });
         };
