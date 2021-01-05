@@ -28,8 +28,15 @@ section {
   border-radius: 16px;
 }
 
-section h2 {
+section h2,
+section figure {
   grid-column: 1 / -1;
+}
+
+section figure {
+  display: inherit;
+  grid-template-columns: inherit;
+  gap: inherit;
 }
 
 article {
