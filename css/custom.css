@@ -42,11 +42,12 @@ section figure {
 section .hints {
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  background: hsl(153 30% 80%);
+  border: 2px solid hsl(153 30% 80%);
+  padding-inline-start: 30px;
 }
 
 section .hints::before {
-  content: "hints: ";
+  content: "Hints: ";
 }
 
 article {
