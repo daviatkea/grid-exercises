@@ -16,16 +16,16 @@
         <figure>
           <img src="img/grid-exercise-1.webp" alt="" />
           <figcaption>
-            <p>Lav 3 kolonner, som er lige brede.</p>
+            <p>Lav tre kolonner, som er lige brede.</p>
             <ul class="hints">
-              <li><code>grid-template-columns</code> (property)</li>
-              <li><code>fr</code> (enhed)</li>
+              <li data-prop><code>grid-template-columns</code> (property)</li>
+              <li data-unit><code>fr</code> (enhed)</li>
             </ul>
           </figcaption>
         </figure>
 
         <article class="output">
-          <div class="ex1">
+          <div class="container">
             <div class="box box-1" contenteditable></div>
             <div class="box box-2" contenteditable></div>
             <div class="box box-3" contenteditable></div>
@@ -40,8 +40,8 @@
 
         <div class="editor">
           <textarea class="prism-live language-css">
-.ex1 {
-  
+.container {
+  display: block;
 }</textarea
           >
           <style class="style"></style>
@@ -49,10 +49,25 @@
       </section>
 
       <section>
-        <h2>Test</h2>
+        <h2>Øvelse 2</h2>
+
+        <figure>
+          <img src="img/grid-exercise-2.webp" alt="" />
+          <figcaption>
+            <p>
+              Lav tre kolonner, hvor den midterste ikke fylder mere end dens
+              indhold.
+            </p>
+            <ul class="hints">
+              <li data-prop><code>grid-template-columns</code> (property)</li>
+              <li data-unit><code>[x]fr</code> (enhed)</li>
+              <li data-unit><code>auto</code> (enhed)</li>
+            </ul>
+          </figcaption>
+        </figure>
 
         <article class="output">
-          <div class="ex2">
+          <div class="container">
             <div class="box box-1" contenteditable></div>
             <div class="box box-2" contenteditable></div>
             <div class="box box-3" contenteditable></div>
@@ -66,7 +81,55 @@
         </article>
 
         <div class="editor">
-          <textarea class="prism-live language-css">/* .ex2 */</textarea>
+          <textarea class="prism-live language-css">
+.container {
+  
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section>
+        <h2>Øvelse 3</h2>
+
+        <figure>
+          <img src="img/grid-exercise-3.webp" alt="" />
+          <figcaption>
+            <p>
+              Lav tre lige brede kolonner, hvor hver række er 50px.
+              <code>.box-2</code> skal spænde over to rækker og to kolonner,
+              samt begynde på række 2 og kolonne 2.
+            </p>
+            <ul class="hints">
+              <li data-prop><code>grid-auto-rows</code> (property)</li>
+              <li data-prop><code>grid-column</code> (property)</li>
+              <li data-prop><code>grid-row</code> (property)</li>
+              <li data-unit><code>span [x]</code> (værdi)</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <article class="output">
+          <div class="container">
+            <div class="box box-1" contenteditable></div>
+            <div class="box box-2" contenteditable></div>
+            <div class="box box-3" contenteditable></div>
+            <div class="box box-4" contenteditable></div>
+            <div class="box box-5" contenteditable></div>
+            <div class="box box-6" contenteditable></div>
+            <div class="box box-7" contenteditable></div>
+            <div class="box box-8" contenteditable></div>
+            <div class="box box-9" contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <textarea class="prism-live language-css">
+.container {
+  
+}</textarea
+          >
           <style class="style"></style>
         </div>
       </section>
@@ -74,39 +137,6 @@
 
     <script src="js/prism.js"></script>
     <script src="js/prism-live.js?load=css"></script>
-    <script>
-      const sections = document.querySelectorAll("section");
-      const classReg = /(\.[a-z])/gi;
-
-      sections.forEach((section, i) => {
-        const styleTag = section.querySelector(".editor > style");
-        const _tA = section.querySelector(".editor > textarea");
-        const storageKey = `exercise-${i + 1}`;
-
-        const init = () => {
-          const parentClass =
-            "parent-" + section.querySelector("article>div").className;
-          section.classList.add(parentClass);
-          function prefix(str) {
-            return str.replaceAll(
-              classReg,
-              (match) => `.${parentClass} ${match}`
-            );
-          }
-          if (localStorage.getItem(storageKey)) {
-            _tA.value = localStorage.getItem(storageKey);
-
-            styleTag.innerHTML = prefix(_tA.value);
-          }
-
-          _tA.addEventListener("input", (e) => {
-            styleTag.innerHTML = prefix(e.target.value);
-            localStorage.setItem(storageKey, _tA.value);
-          });
-        };
-
-        init();
-      });
-    </script>
+    <script src="js/custom.js"></script>
   </body>
 </html>
