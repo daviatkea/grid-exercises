@@ -17,7 +17,7 @@ body {
 main {
   display: grid;
   grid: auto / 1fr minmax(auto, 1200px) 1fr;
-  gap: 2.5rem 0;
+  gap: 3rem 0;
 }
 
 section {
