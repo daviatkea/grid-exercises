@@ -10,6 +10,10 @@ body {
   background: #3a243f;
 }
 
+[contenteditable] {
+  outline: none;
+}
+
 main {
   display: grid;
   grid: auto / 1fr minmax(auto, 1200px) 1fr;
