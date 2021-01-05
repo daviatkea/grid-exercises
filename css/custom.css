@@ -10,10 +10,14 @@ body {
   background: #3a243f;
 }
 
+[contenteditable] {
+  outline: none;
+}
+
 main {
   display: grid;
   grid: auto / 1fr minmax(auto, 1200px) 1fr;
-  gap: 2rem;
+  gap: 3rem 0;
 }
 
 section {
@@ -22,10 +26,10 @@ section {
   display: grid;
   grid: auto / repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   /*place-content: start;*/
-  gap: 2rem;
-  padding: 2rem;
+  gap: 1rem 2rem;
+  padding: 1rem;
   background: hsl(258 50% 95%);
-  border-radius: 16px;
+  border-radius: 6px;
 }
 
 section h2,
@@ -62,7 +66,15 @@ section .hints::before {
 
 .hints li::marker {
   content: "• ";
-  color: hsl(153 20% 40%);
+  color: var(--m, currentColor);
+}
+
+[data-prop] {
+  --m: hsl(153 70% 50%);
+}
+
+[data-unit] {
+  --m: rgb(249, 42, 173);
 }
 
 article {
@@ -160,6 +172,14 @@ article > div {
   font-weight: 700;
   color: #fb28a8;
   border-radius: 0.25rem 0.25rem 0 0;
+}
+
+figcaption p > code {
+  display: inline-block;
+  padding-inline: 0.2rem 0.4rem;
+  background: #2a2138;
+  color: #72f1b8;
+  border-radius: 6px;
 }
 
 div.prism-live {
