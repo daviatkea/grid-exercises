@@ -40,14 +40,29 @@ section figure {
 }
 
 section .hints {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.75rem;
   border-radius: 6px;
   border: 2px solid hsl(153 30% 80%);
-  padding-inline-start: 30px;
+  padding-inline-start: 1.25rem;
+  display: inline-grid;
 }
 
 section .hints::before {
-  content: "Hints: ";
+  content: "Hints";
+  margin-block: -0.8rem 0;
+  background: #efebf9;
+  padding-inline: 0.25rem;
+  margin-inline-start: -0.25rem;
+  justify-self: start;
+  text-transform: uppercase;
+  font-size: 0.7em;
+  font-weight: 600;
+  color: hsl(153 20% 40%);
+}
+
+.hints li::marker {
+  content: "• ";
+  color: hsl(153 20% 40%);
 }
 
 article {
