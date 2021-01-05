@@ -18,14 +18,14 @@
           <figcaption>
             <p>Lav 3 kolonner, som er lige brede.</p>
             <ul class="hints">
-              <li><code>grid-template-columns</code> (property)</li>
-              <li><code>fr</code> (enhed)</li>
+              <li data-prop><code>grid-template-columns</code> (property)</li>
+              <li data-unit><code>fr</code> (enhed)</li>
             </ul>
           </figcaption>
         </figure>
 
         <article class="output">
-          <div class="ex1">
+          <div class="container">
             <div class="box box-1" contenteditable></div>
             <div class="box box-2" contenteditable></div>
             <div class="box box-3" contenteditable></div>
@@ -40,8 +40,8 @@
 
         <div class="editor">
           <textarea class="prism-live language-css">
-.ex1 {
-  
+.container {
+  display: block;
 }</textarea
           >
           <style class="style"></style>
@@ -49,10 +49,25 @@
       </section>
 
       <section>
-        <h2>Test</h2>
+        <h2>Øvelse 2</h2>
+
+        <figure>
+          <img src="img/grid-exercise-2.webp" alt="" />
+          <figcaption>
+            <p>
+              Lav 3 kolonner, hvor den midterste ikke fylder mere end dens
+              indhold.
+            </p>
+            <ul class="hints">
+              <li data-prop><code>grid-template-columns</code> (property)</li>
+              <li data-unit><code>fr</code> (enhed)</li>
+              <li data-unit><code>auto</code> (enhed)</li>
+            </ul>
+          </figcaption>
+        </figure>
 
         <article class="output">
-          <div class="ex2">
+          <div class="container">
             <div class="box box-1" contenteditable></div>
             <div class="box box-2" contenteditable></div>
             <div class="box box-3" contenteditable></div>
@@ -66,7 +81,11 @@
         </article>
 
         <div class="editor">
-          <textarea class="prism-live language-css">/* .ex2 */</textarea>
+          <textarea class="prism-live language-css">
+.container {
+  
+}</textarea
+          >
           <style class="style"></style>
         </div>
       </section>
@@ -74,28 +93,6 @@
 
     <script src="js/prism.js"></script>
     <script src="js/prism-live.js?load=css"></script>
-    <script>
-      const sections = document.querySelectorAll("section");
-
-      sections.forEach((section, i) => {
-        const styleTag = section.querySelector(".editor > style");
-        const _tA = section.querySelector(".editor > textarea");
-        const storageKey = `exercise-${i + 1}`;
-
-        const init = () => {
-          if (localStorage.getItem(storageKey)) {
-            _tA.value = localStorage.getItem(storageKey);
-            styleTag.innerHTML = _tA.value;
-          }
-
-          _tA.addEventListener("input", (e) => {
-            styleTag.innerHTML = e.target.value;
-            localStorage.setItem(storageKey, _tA.value);
-          });
-        };
-
-        init();
-      });
-    </script>
+    <script src="js/custom.js"></script>
   </body>
 </html>

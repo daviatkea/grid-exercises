@@ -62,7 +62,15 @@ section .hints::before {
 
 .hints li::marker {
   content: "• ";
-  color: hsl(153 20% 40%);
+  color: var(--m, currentColor);
+}
+
+[data-prop] {
+  --m: hsl(153 70% 50%);
+}
+
+[data-unit] {
+  --m: rgb(249, 42, 173);
 }
 
 article {

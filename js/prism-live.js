@@ -89,6 +89,7 @@
         // TODO data-* attribute for modifier
         // TODO load dynamically if not present
         new Incrementable(this.textarea);
+        console.log(new Incrementable(this.textarea));
       }
 
       $.bind(this.textarea, {
