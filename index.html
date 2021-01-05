@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercises</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/prism.css" />
+    <link rel="stylesheet" href="css/custom.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h2>Test</h2>
+
+        <article class="output">
+          <div class="ex1">
+            <div class="box box-1" contenteditable></div>
+            <div class="box box-2" contenteditable></div>
+            <div class="box box-3" contenteditable></div>
+            <div class="box box-4" contenteditable></div>
+            <div class="box box-5" contenteditable></div>
+            <div class="box box-6" contenteditable></div>
+            <div class="box box-7" contenteditable></div>
+            <div class="box box-8" contenteditable></div>
+            <div class="box box-9" contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <textarea class="prism-live language-css">
+.ex1 {
+  
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section>
+        <h2>Test</h2>
+
+        <article class="output">
+          <div class="ex2">
+            <div class="box box-1" contenteditable></div>
+            <div class="box box-2" contenteditable></div>
+            <div class="box box-3" contenteditable></div>
+            <div class="box box-4" contenteditable></div>
+            <div class="box box-5" contenteditable></div>
+            <div class="box box-6" contenteditable></div>
+            <div class="box box-7" contenteditable></div>
+            <div class="box box-8" contenteditable></div>
+            <div class="box box-9" contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <textarea class="prism-live language-css">/* .ex2 */</textarea>
+          <style class="style"></style>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/prism.js"></script>
+    <script src="js/prism-live.js?load=css"></script>
+    <script>
+      const sections = document.querySelectorAll("section");
+
+      sections.forEach((section, i) => {
+        const styleTag = section.querySelector(".editor > style");
+        const _tA = section.querySelector(".editor > textarea");
+        const storageKey = `exercise-${i + 1}`;
+
+        const init = () => {
+          if (localStorage.getItem(storageKey)) {
+            _tA.value = localStorage.getItem(storageKey);
+            styleTag.innerHTML = _tA.value;
+          }
+
+          _tA.addEventListener("input", (e) => {
+            styleTag.innerHTML = e.target.value;
+            localStorage.setItem(storageKey, _tA.value);
+          });
+        };
+
+        init();
+      });
+    </script>
+  </body>
+</html>

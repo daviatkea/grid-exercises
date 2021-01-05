@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  padding: 1rem;
+  background: #3a243f;
+}
+
+main {
+  display: grid;
+  grid: auto / 1fr minmax(auto, 1200px) 1fr;
+  gap: 2rem;
+}
+
+section {
+  grid-column: 2 / -2;
+
+  display: grid;
+  grid: auto / repeat(auto-fit, minmax(min(100%, 400px), 1fr));
+  /*place-content: start;*/
+  gap: 2rem;
+  padding: 2rem;
+  background: hsl(258 50% 95%);
+  border-radius: 16px;
+}
+
+section h2 {
+  grid-column: 1 / -1;
+}
+
+article {
+  display: grid;
+  align-self: start;
+  position: relative;
+  max-inline-size: 100%;
+  max-block-size: 500px;
+  border: 2px dashed #fb28a8;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Helvetica Neue", Arial, sans-serif;
+  resize: both;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+article::after {
+  content: "↖";
+  display: grid;
+  place-content: center;
+  font-weight: 800;
+  position: absolute;
+  bottom: -0.5rem;
+  right: -0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #fb28a8;
+}
+
+article > div {
+  grid-area: 1 / -1;
+  padding: 4px;
+  place-self: center;
+  justify-self: stretch;
+  align-self: stretch;
+  gap: 1px;
+}
+
+.box {
+  display: grid;
+  place-content: center;
+  box-shadow: 0 0 0 1px #3a243f;
+  /*min-inline-size: 2rem;
+  min-block-size: 2rem;*/
+  text-align: center;
+  background: #72f1b8;
+  color: #2a2139;
+  font-weight: 700;
+  counter-increment: count;
+}
+
+.box::before {
+  content: ".box-" counter(count) " ";
+  display: contents;
+  font-weight: 500;
+}
+
+.box:hover {
+  background: linear-gradient(#287ba8, #287ba8) content-box,
+    linear-gradient(#6a54ab, #6a54ab) padding-box;
+  background: linear-gradient(#89b2be, #89b2be) content-box,
+    linear-gradient(#b8c47f, #b8c47f) padding-box;
+  border-color: #38383d !important;
+  border-color: #e3c382 !important;
+}
+
+.editor {
+  border-radius: 0.25rem;
+  background: #2c203b;
+  overflow: auto;
+  margin: 0;
+  padding-block-end: 0.25rem;
+  /* box-shadow: hsla(293, 43%, 32%, 0.4) -5px 5px, hsla(293, 43%, 32%, 0.3) -10px 10px, hsla(293, 43%, 32%, 0.2) -15px 15px, hsla(293, 43%, 32%, 0.1) -20px 20px, hsla(293, 43%, 32%, 0.05) -25px 25px; */
+  justify-self: stretch;
+  align-self: start;
+}
+
+.editor::before {
+  content: "css";
+  display: block;
+  width: 100%;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  line-height: 0.9;
+  padding: 0.75rem 1rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Helvetica Neue", Arial, sans-serif;
+  background: linear-gradient(
+    to bottom left,
+    #2c203b,
+    75%,
+    hsl(267deg 30% 15%)
+  );
+  font-weight: 700;
+  color: #fb28a8;
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+div.prism-live {
+  border-radius: 0 0 0.25rem 0.25rem;
+  overflow: hidden;
+}
+
+textarea.prism-live,
+pre.prism-live,
+code {
+  font-family: "Roboto Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
+    monospace !important;
+}
