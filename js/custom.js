@@ -6,6 +6,40 @@ sections.forEach((section, i) => {
   const _tA = section.querySelector(".editor > textarea");
   const storageKey = `exercise-${i + 1}`;
 
+  const parent = section.querySelector(".container");
+  const pluses = section.querySelectorAll(".plus");
+  const minuses = section.querySelectorAll(".minus");
+
+  pluses.forEach((plus) => {
+    plus.addEventListener("click", addBox);
+  });
+  minuses.forEach((minus) => {
+    minus.addEventListener("click", removeBox);
+  });
+
+  function addBox() {
+    const count = parent.children.length;
+    const box = document.createElement("div");
+    box.className = `box box-${count + 1}`;
+    box.setAttribute("contenteditable", true);
+    parent.appendChild(box);
+  }
+
+  function addClasses() {
+    [...parent.children].forEach((b, i) => {
+      b.className = `box box-${i + 1}`;
+    });
+  }
+
+  function removeBox() {
+    if (parent.children.length - 1) {
+      const last = parent.lastElementChild;
+      parent.removeChild(last);
+    }
+  }
+
+  addClasses();
+
   const init = () => {
     // const parentClass =
     //   "exercise-" + section.querySelector("article>div").className;
