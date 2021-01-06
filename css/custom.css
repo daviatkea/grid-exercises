@@ -195,6 +195,7 @@ button {
   padding: 0.25rem 0.5rem;
   cursor: pointer;
   box-shadow: 0 0 0 0 #fb28a8;
+  transition: 0.2s;
 }
 
 @media (hover: hover) {
