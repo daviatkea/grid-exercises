@@ -175,6 +175,17 @@ article > div {
   border-radius: 0.25rem 0.25rem 0 0;
 }
 
+.controls {
+  display: grid;
+  grid: auto / repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+  gap: 0 2rem;
+  justify-items: end;
+}
+
+.controls::after {
+  content: "";
+}
+
 button {
   border-radius: 6px;
   border: 2px solid #fb28a8;
