@@ -78,7 +78,6 @@ sections.forEach((section, i) => {
 
     if (localStorage.getItem(boxKey)) {
       boxes = localStorage.getItem(boxKey);
-      console.log(boxes);
       for (let i = 0; i < boxes; i++) {
         addBox(i);
       }

@@ -175,6 +175,33 @@ article > div {
   border-radius: 0.25rem 0.25rem 0 0;
 }
 
+button {
+  border-radius: 6px;
+  border: 2px solid #fb28a8;
+  background: hsl(324deg 50% 80%);
+  color: #2a2139;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: hsl(324deg 50% 88%);
+}
+
+button.plus::before,
+button.minus::before {
+  content: "+";
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 1.3em;
+  line-height: 1;
+  margin-inline-end: 0.2em;
+}
+button.plus::before {
+  content: "-";
+}
+
 figcaption p > code {
   display: inline-block;
   padding-inline: 0.2rem 0.4rem;
