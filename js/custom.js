@@ -5,16 +5,34 @@ sections.forEach((section, i) => {
   const styleTag = section.querySelector(".editor > style");
   const _tA = section.querySelector(".editor > textarea");
   const storageKey = `exercise-${i + 1}`;
+  const boxKey = `box-${i + 1}`;
+  let boxes = 0;
 
   const parent = section.querySelector(".container");
   const pluses = section.querySelectorAll(".plus");
   const minuses = section.querySelectorAll(".minus");
 
   pluses.forEach((plus) => {
-    plus.addEventListener("click", addBox);
+    // plus.addEventListener("click", addBox);
+    plus.addEventListener("click", (e) => {
+      addBox();
+
+      if (!boxes >= 0) {
+        boxes++;
+      }
+      boxCount();
+    });
   });
   minuses.forEach((minus) => {
-    minus.addEventListener("click", removeBox);
+    // minus.addEventListener("click", removeBox);
+    minus.addEventListener("click", (e) => {
+      removeBox();
+
+      if (!boxes <= 0) {
+        boxes--;
+      }
+      boxCount();
+    });
   });
 
   function addBox() {
@@ -38,6 +56,10 @@ sections.forEach((section, i) => {
     }
   }
 
+  function boxCount() {
+    localStorage.setItem(boxKey, boxes);
+  }
+
   addClasses();
 
   const init = () => {
@@ -52,6 +74,13 @@ sections.forEach((section, i) => {
     if (localStorage.getItem(storageKey)) {
       _tA.value = localStorage.getItem(storageKey);
       styleTag.innerHTML = prefix(_tA.value);
+    }
+
+    if (localStorage.getItem(boxKey)) {
+      boxes = localStorage.getItem(boxKey);
+      for (let i = 0; i < boxes; i++) {
+        addBox(i);
+      }
     }
 
     _tA.addEventListener("input", (e) => {
