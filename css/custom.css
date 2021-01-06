@@ -198,7 +198,7 @@ button.minus::before {
   line-height: 1;
   margin-inline-end: 0.2em;
 }
-button.plus::before {
+button.minus::before {
   content: "-";
 }
 
