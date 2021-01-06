@@ -200,6 +200,10 @@ button:hover {
   background: hsl(324deg 50% 88%);
 }
 
+button:active {
+  background: hsl(324deg 50% 70%);
+}
+
 button.plus::before,
 button.minus::before {
   content: "+";
