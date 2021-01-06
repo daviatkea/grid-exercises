@@ -18,6 +18,7 @@ main {
   display: grid;
   grid: auto / minmax(1rem, 1fr) minmax(auto, 1200px) minmax(1rem, 1fr);
   gap: 3rem 0;
+  counter-reset: task;
 }
 
 section {
@@ -32,10 +33,33 @@ section {
   border-radius: 6px;
 }
 
-section h2,
+section header,
 section figure,
 section .controls {
   grid-column: 1 / -1;
+}
+
+.small-label {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8em;
+  color: #5000ca;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  counter-increment: task;
+}
+
+.small-label::before {
+  content: "";
+  height: 2px;
+  width: 1.5rem;
+  background: #5000ca;
+}
+
+.small-label::after {
+  content: counter(task);
 }
 
 section figure {
