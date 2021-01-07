@@ -12,8 +12,6 @@ sections.forEach((section, i) => {
   const plus = section.querySelector(".plus");
   const minus = section.querySelector(".minus");
 
-  section.dataset.exerciseKey = `${i + 1}`;
-
   function prefix(str) {
     return str.replaceAll(
       classReg,
@@ -91,6 +89,7 @@ sections.forEach((section, i) => {
     // const parentClass =
     //   "exercise-" + section.querySelector("article>div").className;
     // const parentDataset = `${i + 1}`;
+    section.dataset.exerciseKey = `${i + 1}`;
 
     if (localStorage.getItem(exerciseKey)) {
       _tA.value = localStorage.getItem(exerciseKey);
