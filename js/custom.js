@@ -4,34 +4,58 @@ const classReg = /(\.[a-z])/gi;
 sections.forEach((section, i) => {
   const styleTag = section.querySelector(".editor > style");
   const _tA = section.querySelector(".editor > textarea");
-  const storageKey = `exercise-${i + 1}`;
+  const exerciseKey = `${i + 1}`;
   const boxKey = `box-${i + 1}`;
   let boxes = 0;
 
   const parent = section.querySelector(".container");
-  const pluses = section.querySelectorAll(".plus");
-  const minuses = section.querySelectorAll(".minus");
+  const plus = section.querySelector(".plus");
+  const minus = section.querySelector(".minus");
 
-  pluses.forEach((plus) => {
-    // plus.addEventListener("click", addBox);
+  function prefix(str) {
+    return str.replaceAll(
+      classReg,
+      (match) => `[data-exercise-key="${exerciseKey}"] ${match}`
+    );
+  }
+
+  function addButtonListeners() {
+    if (!plus) return;
+
     plus.addEventListener("click", (e) => {
       addBox();
 
       boxes++;
+
+      minus.disabled = false;
+
       boxCount();
     });
-  });
-  minuses.forEach((minus) => {
-    // minus.addEventListener("click", removeBox);
+
+    if (localStorage.getItem(boxKey)) {
+      boxes = localStorage.getItem(boxKey);
+      minus.disabled = boxes > 0 ? false : true;
+    } else {
+      minus.disabled = boxes > 0 ? false : true;
+    }
+
     minus.addEventListener("click", (e) => {
       removeBox();
 
-      if (!boxes <= 0) {
-        boxes--;
-      }
+      minus.disabled = parent.children.length <= 1 ? true : false;
+
+      // if (!boxes <= 0) {
+      //   boxes--;
+      // }
+
+      if (boxes === 0) return;
+      boxes--;
+
       boxCount();
     });
-  });
+  }
+
+  addButtonListeners();
 
   function addBox() {
     const count = parent.children.length;
@@ -55,6 +79,7 @@ sections.forEach((section, i) => {
   }
 
   function boxCount() {
+    if (boxes < 0) return;
     localStorage.setItem(boxKey, boxes);
   }
 
@@ -63,14 +88,11 @@ sections.forEach((section, i) => {
   const init = () => {
     // const parentClass =
     //   "exercise-" + section.querySelector("article>div").className;
-    const parentClass = `exercise-${i + 1}`;
-    section.classList.add(parentClass);
-    function prefix(str) {
-      return str.replaceAll(classReg, (match) => `.${parentClass} ${match}`);
-    }
+    // const parentDataset = `${i + 1}`;
+    section.dataset.exerciseKey = `${i + 1}`;
 
-    if (localStorage.getItem(storageKey)) {
-      _tA.value = localStorage.getItem(storageKey);
+    if (localStorage.getItem(exerciseKey)) {
+      _tA.value = localStorage.getItem(exerciseKey);
       styleTag.innerHTML = prefix(_tA.value);
     }
 
@@ -83,7 +105,7 @@ sections.forEach((section, i) => {
 
     _tA.addEventListener("input", (e) => {
       styleTag.innerHTML = prefix(e.target.value);
-      localStorage.setItem(storageKey, _tA.value);
+      localStorage.setItem(exerciseKey, _tA.value);
     });
   };
 
