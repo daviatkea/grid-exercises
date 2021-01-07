@@ -4,7 +4,7 @@ const classReg = /(\.[a-z])/gi;
 sections.forEach((section, i) => {
   const styleTag = section.querySelector(".editor > style");
   const _tA = section.querySelector(".editor > textarea");
-  const exerciseKey = `exercise-${i + 1}`;
+  const exerciseKey = `${i + 1}`;
   const boxKey = `box-${i + 1}`;
   let boxes = 0;
 
