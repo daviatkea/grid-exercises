@@ -4,13 +4,15 @@ const classReg = /(\.[a-z])/gi;
 sections.forEach((section, i) => {
   const styleTag = section.querySelector(".editor > style");
   const _tA = section.querySelector(".editor > textarea");
-  const exerciseKey = `${i + 1}`;
+  const exerciseKey = `exercise-${i + 1}`;
   const boxKey = `box-${i + 1}`;
   let boxes = 0;
 
   const parent = section.querySelector(".container");
   const plus = section.querySelector(".plus");
   const minus = section.querySelector(".minus");
+
+  section.dataset.exerciseKey = `${i + 1}`;
 
   function prefix(str) {
     return str.replaceAll(
@@ -22,6 +24,13 @@ sections.forEach((section, i) => {
   function addButtonListeners() {
     if (!plus) return;
 
+    if (localStorage.getItem(boxKey)) {
+      boxes = localStorage.getItem(boxKey);
+      minus.disabled = boxes > 0 ? false : true;
+    } else {
+      minus.disabled = boxes > 0 ? false : true;
+    }
+
     plus.addEventListener("click", (e) => {
       addBox();
 
@@ -31,13 +40,6 @@ sections.forEach((section, i) => {
 
       boxCount();
     });
-
-    if (localStorage.getItem(boxKey)) {
-      boxes = localStorage.getItem(boxKey);
-      minus.disabled = boxes > 0 ? false : true;
-    } else {
-      minus.disabled = boxes > 0 ? false : true;
-    }
 
     minus.addEventListener("click", (e) => {
       removeBox();
@@ -89,7 +91,6 @@ sections.forEach((section, i) => {
     // const parentClass =
     //   "exercise-" + section.querySelector("article>div").className;
     // const parentDataset = `${i + 1}`;
-    section.dataset.exerciseKey = `${i + 1}`;
 
     if (localStorage.getItem(exerciseKey)) {
       _tA.value = localStorage.getItem(exerciseKey);
