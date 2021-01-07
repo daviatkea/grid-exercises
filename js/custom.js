@@ -17,9 +17,7 @@ sections.forEach((section, i) => {
     plus.addEventListener("click", (e) => {
       addBox();
 
-      if (!boxes >= 0) {
-        boxes++;
-      }
+      boxes++;
       boxCount();
     });
   });
