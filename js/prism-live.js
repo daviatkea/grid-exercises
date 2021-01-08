@@ -25,7 +25,7 @@
     var load = new URL(base).searchParams.get("load");
 
     if (load !== null) {
-      var files = ["../prism-live.css"];
+      var files = ["../css/prism-live.css"];
 
       if (load) {
         files.push(
