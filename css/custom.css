@@ -52,8 +52,21 @@ footer {
 }
 
 .stroke-text {
+  color: #72f1b8;
   -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 2px #72f1b8;
+  -webkit-text-stroke: 2px currentColor;
+  overflow: hidden;
+  max-width: 3.1ch;
+  display: inline-block;
+  vertical-align: bottom;
+  transition: 0.3s;
+  will-change: max-width;
+  contain: paint;
+}
+
+h1:hover span.stroke-text {
+  max-width: 1.05ch;
+  color: #fb28a8;
 }
 
 .main-header > *,
