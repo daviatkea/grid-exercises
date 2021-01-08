@@ -1,10 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap");
 
 * {
-  --responsive1: (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
-    ((100vw - 375px) / (895 - 375));
-  --responsive2: (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
-    ((100vw - 896px) / (1200 - 896));
+  --max-screen-size: var(--screen-max, 1200);
+  --min-screen-size: var(--screen-min, 375);
+  --responsive: (
+    (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+      (
+        (100vw - (var(--min-screen-size) * 1px)) /
+          (var(--max-screen-size) - var(--min-screen-size))
+      )
+  );
+  /* --responsive1: ((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 375px) / (895 - 375))); */
+  /*--responsive2: (var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) *
+    ((100vw - 896px) / (1200 - 896));*/
 }
 
 html {
@@ -31,7 +39,20 @@ footer {
 }
 
 .main-header h1 {
-  font-size: 3rem;
+  font-weight: 900;
+  font-size: 4rem;
+  --min-font: 40;
+  --max-font: 64;
+  font-size: clamp(
+    var(--min-font) * 1px,
+    var(--responsive),
+    var(--max-font) * 1px
+  );
+}
+
+.stroke-text {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 2px;
 }
 
 .main-header > *,
@@ -197,9 +218,11 @@ article > div {
 .container .box {
   --min-font: 11;
   --max-font: 29;
+  --screen-max: 895;
+  --screen-min: 375;
   font-size: clamp(
     var(--min-font) * 1px,
-    var(--responsive1),
+    var(--responsive),
     var(--max-font) * 1px
   );
 }
@@ -208,9 +231,11 @@ article > div {
   .container .box {
     --min-font: 14;
     --max-font: 20;
+    --screen-max: 1200;
+    --screen-min: 896;
     font-size: clamp(
       var(--min-font) * 1px,
-      var(--responsive2),
+      var(--responsive),
       var(--max-font) * 1px
     );
   }
