@@ -22,6 +22,9 @@ sections.forEach((section, i) => {
       styleTag.innerHTML = null;
       _tA.value = startingCSS;
       _tA.focus(); /* ensure that the UI updates */
+      reset.disabled = true;
+    } else {
+      reset.disabled = false;
     }
   });
   // });
@@ -120,6 +123,10 @@ sections.forEach((section, i) => {
     _tA.addEventListener("input", (e) => {
       styleTag.innerHTML = prefix(e.target.value);
       localStorage.setItem(exerciseKey, _tA.value);
+
+      if (_tA.value !== startingCSS) {
+        reset.disabled = false;
+      }
     });
   };
 
