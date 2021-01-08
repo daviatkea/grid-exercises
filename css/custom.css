@@ -331,6 +331,8 @@ button.reset {
   inline-size: 25px;
   block-size: 25px;
   background: transparent;
+  display: grid;
+  place-content: center;
 }
 
 button.plus::before,
