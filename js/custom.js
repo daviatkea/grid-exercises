@@ -16,8 +16,11 @@ sections.forEach((section, i) => {
   const minus = section.querySelector(".minus");
 
   // resetBtns.forEach((reset) => {
-  reset.addEventListener("click", (e) => {
-    if (localStorage.getItem(exerciseKey)) {
+  reset.addEventListener("click", resetUI);
+  // });
+
+  function resetUI() {
+    if (localStorage.getItem(exerciseKey) || _tA.value === "") {
       localStorage.removeItem(exerciseKey);
       styleTag.innerHTML = null;
       _tA.value = startingCSS;
@@ -26,8 +29,7 @@ sections.forEach((section, i) => {
     } else {
       reset.disabled = false;
     }
-  });
-  // });
+  }
 
   function prefix(str) {
     return str.replaceAll(
@@ -37,7 +39,7 @@ sections.forEach((section, i) => {
   }
 
   function addButtonListeners() {
-    if (!plus) return;
+    if (!plus && !minus) return;
 
     if (localStorage.getItem(boxKey)) {
       boxes = localStorage.getItem(boxKey);
@@ -60,10 +62,6 @@ sections.forEach((section, i) => {
       removeBox();
 
       minus.disabled = parent.children.length <= 1 ? true : false;
-
-      // if (!boxes <= 0) {
-      //   boxes--;
-      // }
 
       if (boxes === 0) return;
       boxes--;
@@ -120,12 +118,24 @@ sections.forEach((section, i) => {
       }
     }
 
+    if (_tA.value !== startingCSS) {
+      reset.disabled = false;
+    } else {
+      reset.disabled = true;
+    }
+
     _tA.addEventListener("input", (e) => {
       styleTag.innerHTML = prefix(e.target.value);
       localStorage.setItem(exerciseKey, _tA.value);
 
+      if (_tA.value === "") {
+        localStorage.removeItem(exerciseKey);
+      }
+
       if (_tA.value !== startingCSS) {
         reset.disabled = false;
+      } else {
+        reset.disabled = true;
       }
     });
   };
