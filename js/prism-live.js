@@ -94,6 +94,7 @@
 
       $.bind(this.textarea, {
         input: (evt) => this.update(),
+        focus: (evt) => this.update(),
 
         keyup: (evt) => {
           if (evt.key == "Enter") {

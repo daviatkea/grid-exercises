@@ -7,10 +7,24 @@ sections.forEach((section, i) => {
   const exerciseKey = `${i + 1}`;
   const boxKey = `box-${i + 1}`;
   let boxes = 0;
+  let startingCSS = _tA.innerHTML;
 
   const parent = section.querySelector(".container");
+  // const resetBtns = section.querySelectorAll(".reset");
+  const reset = section.querySelector(".reset");
   const plus = section.querySelector(".plus");
   const minus = section.querySelector(".minus");
+
+  // resetBtns.forEach((reset) => {
+  reset.addEventListener("click", (e) => {
+    if (localStorage.getItem(exerciseKey)) {
+      localStorage.removeItem(exerciseKey);
+      styleTag.innerHTML = null;
+      _tA.value = startingCSS;
+      _tA.focus(); /* ensure that the UI updates */
+    }
+  });
+  // });
 
   function prefix(str) {
     return str.replaceAll(
