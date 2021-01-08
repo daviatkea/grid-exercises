@@ -13,12 +13,32 @@ html {
 
 body {
   min-height: 100%;
-  padding-block: 6rem;
+  /* padding-block: 6rem; */
   background: #3a243f;
 }
 
 [contenteditable] {
   outline: none;
+}
+
+.main-header,
+footer {
+  display: grid;
+  grid: auto / minmax(1rem, 1fr) minmax(auto, 1200px) minmax(1rem, 1fr);
+  gap: 3rem 0;
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.main-header h1 {
+  font-size: 3rem;
+}
+
+.main-header > *,
+footer > * {
+  grid-column: 2 / -2;
+  color: #fb28a8;
+  font-weight: 700;
 }
 
 main {
