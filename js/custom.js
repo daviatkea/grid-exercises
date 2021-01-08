@@ -16,8 +16,14 @@ sections.forEach((section, i) => {
   const minus = section.querySelector(".minus");
 
   // resetBtns.forEach((reset) => {
-  reset.addEventListener("click", resetUI);
+  reset.addEventListener("click", promptUI);
   // });
+
+  function promptUI() {
+    if (window.confirm("Do you really want to reset?")) {
+      resetUI();
+    }
+  }
 
   function resetUI() {
     if (localStorage.getItem(exerciseKey) || _tA.value === "") {
