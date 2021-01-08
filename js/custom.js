@@ -20,7 +20,9 @@ sections.forEach((section, i) => {
   // });
 
   function promptUI() {
-    if (
+    if (_tA.value === "") {
+      resetUI();
+    } else if (
       window.confirm(`Do you really want to reset exercise ${exerciseKey}?`)
     ) {
       resetUI();
