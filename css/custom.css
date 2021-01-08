@@ -324,8 +324,13 @@ button.reset {
   inset-inline-end: 0;
   inset-block-start: 0.25em;
   z-index: 1;
-  margin-inline-end: 0.5em;
-  padding-block: 0.1em;
+  margin-inline-end: 0.25em;
+  /* padding-block: 0.1em; */
+  color: #fff;
+  padding: 0;
+  inline-size: 25px;
+  block-size: 25px;
+  background: transparent;
 }
 
 button.plus::before,
