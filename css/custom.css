@@ -170,6 +170,8 @@ section .hints {
   border: 2px solid hsl(153 30% 80%);
   padding-inline-start: 1.25rem;
   display: inline-grid;
+  font-family: "Wotfard";
+  font-weight: 300;
 }
 
 section .hints::before {
@@ -436,4 +438,5 @@ pre.prism-live,
 code {
   font-family: "Roboto Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
     monospace !important;
+  font-weight: 500;
 }
