@@ -174,7 +174,7 @@ section figure {
 }
 
 section figure img {
-  align-self: end;
+  /* align-self: end; */
 }
 
 figcaption > p + * {
