@@ -47,6 +47,16 @@ body {
   background: #3a243f;
 }
 
+h2 {
+  font-family: "Wotfard";
+  font-weight: 500;
+}
+
+p {
+  font-family: "Wotfard";
+  font-weight: 300;
+}
+
 [contenteditable] {
   outline: none;
 }
