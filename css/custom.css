@@ -50,12 +50,12 @@ body {
 h2 {
   font-family: "Wotfard";
   font-weight: 500;
-  font-size: 17px;
 }
 
 p {
   font-family: "Wotfard";
   font-weight: 300;
+  font-size: 17px;
 }
 
 [contenteditable] {
