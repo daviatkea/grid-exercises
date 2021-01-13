@@ -295,7 +295,7 @@ article > div {
   background: #2c203b;
   overflow: auto;
   margin: 0;
-  padding-block-end: 0.25rem;
+  /* padding-block-end: 0.25rem; */
   /* box-shadow: hsla(293, 43%, 32%, 0.4) -5px 5px, hsla(293, 43%, 32%, 0.3) -10px 10px, hsla(293, 43%, 32%, 0.2) -15px 15px, hsla(293, 43%, 32%, 0.1) -20px 20px, hsla(293, 43%, 32%, 0.05) -25px 25px; */
   justify-self: stretch;
   align-self: start;
