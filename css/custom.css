@@ -176,7 +176,7 @@ section .hints {
 
 section .hints::before {
   content: "Hints";
-  margin-block: -0.8rem 0;
+  margin-block: -0.7rem 0;
   background: #efebf9;
   padding-inline: 0.25rem;
   margin-inline-start: -0.25rem;
