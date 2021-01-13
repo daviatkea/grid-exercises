@@ -128,7 +128,8 @@ section {
   border-radius: 6px;
 }
 
-section header,
+/* section header, */
+section .small-label,
 section figure,
 section .controls {
   grid-column: 1 / -1;
