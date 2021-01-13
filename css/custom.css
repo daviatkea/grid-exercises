@@ -164,6 +164,14 @@ section figure {
   gap: inherit;
 }
 
+section figure img {
+  align-self: end;
+}
+
+figcaption > p + * {
+  margin-block-start: 1rem;
+}
+
 section .hints {
   padding: 0.25rem 0.75rem;
   border-radius: 6px;
