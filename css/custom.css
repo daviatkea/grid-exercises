@@ -118,6 +118,7 @@ footer {
   transition: 0.3s;
   will-change: max-width;
   contain: paint;
+  -webkit-user-select: none;
   user-select: none;
 }
 
