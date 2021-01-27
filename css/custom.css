@@ -101,6 +101,7 @@ footer {
     var(--max-font) * 1px
   );
   cursor: pointer;
+  justify-self: center;
 }
 
 .stroke-text {
