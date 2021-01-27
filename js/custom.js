@@ -1,3 +1,9 @@
+const heading = document.querySelector("h1");
+heading.addEventListener("click", ({ target }) => {
+  const span = heading.querySelector("span");
+  span.classList.toggle("toggled");
+});
+
 const sections = document.querySelectorAll("section");
 const classReg = /(\.[a-z])/gi;
 

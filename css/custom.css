@@ -115,7 +115,8 @@ footer {
   contain: paint;
 }
 
-h1:hover span.stroke-text {
+/*h1:hover span.stroke-text {*/
+.toggled {
   max-width: 1.05ch;
   color: #fb28a8;
 }
