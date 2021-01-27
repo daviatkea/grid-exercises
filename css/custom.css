@@ -118,6 +118,7 @@ footer {
   transition: 0.3s;
   will-change: max-width;
   contain: paint;
+  user-select: none;
 }
 
 /*h1:hover span.stroke-text {*/
