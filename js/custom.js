@@ -1,4 +1,4 @@
-function observeNav() {
+function observeHeader() {
   const el = document.querySelector(".main-header");
 ​
   if (!el) return;
@@ -11,7 +11,7 @@ function observeNav() {
   observer.observe(el);
 }
 ​
-observeNav();
+observeHeader();
 
 
 const heading = document.querySelector("h1");
