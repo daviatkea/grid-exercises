@@ -91,13 +91,17 @@ footer {
   margin-block: 3rem;
 }
 
+.main-header {
+  z-index: 100;
+}
+
 .main-header.is-pinned {
   position: sticky;
   top: -1px;
 }
 
 .main-header.is-pinned h1 {
-  transform: translateX(0) scale(0.4);
+  transform: translateX(25%) scale(0.5);
   transition: 0.3s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
@@ -106,7 +110,7 @@ footer {
   will-change: transform;
   padding-inline: 1rem;
   border-radius: 8px;
-  transform-origin: top center;
+  transform-origin: 0 0;
   transition: 0.1s cubic-bezier(0.5, 0, 0.5, 1);
 }
 
