@@ -101,8 +101,8 @@ footer {
 }
 
 .main-header.is-pinned h1 {
-  transform: translateX(25%) scale(0.5);
-  transition: 0.3s cubic-bezier(0.5, 0, 0.5, 1);
+  transform: translate(25%, 5px) scale(0.5);
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .main-header h1 {
