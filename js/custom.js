@@ -1,3 +1,19 @@
+function observeNav() {
+  const el = document.querySelector(".main-header");
+​
+  if (!el) return;
+​
+  const observer = new IntersectionObserver(
+    ([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+    { threshold: 1 }
+  );
+​
+  observer.observe(el);
+}
+​
+observeNav();
+
+
 const heading = document.querySelector("h1");
 heading.addEventListener("click", ({ target }) => {
   const span = heading.querySelector("span");
@@ -158,3 +174,32 @@ sections.forEach((section, i) => {
 
   init();
 });
+
+// const downloadBtn = document.querySelector("#download");
+
+// downloadBtn.addEventListener("click", (_) => {
+//   const array = [];
+
+//   let keys = Object.keys(localStorage);
+//   for (let key of keys) {
+//     array.push(`${key}:\n${localStorage.getItem(key)}\n\n`);
+//   }
+
+//   download("exercises.txt", array);
+// });
+
+// function download(filename, text) {
+//   const element = document.createElement("a");
+//   element.setAttribute(
+//     "href",
+//     "data:text/plain;charset=utf-8," + encodeURIComponent(text)
+//   );
+//   element.setAttribute("download", filename);
+
+//   element.style.display = "none";
+//   document.body.appendChild(element);
+
+//   element.click();
+
+//   document.body.removeChild(element);
+// }
