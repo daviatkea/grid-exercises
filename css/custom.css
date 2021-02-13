@@ -484,6 +484,7 @@ figcaption p > code {
   padding-inline: 0.2rem 0.4rem;
   background: #2a2138;
   color: #72f1b8;
+  color: var(--m, #72f1b8);
   border-radius: 6px;
 }
 
