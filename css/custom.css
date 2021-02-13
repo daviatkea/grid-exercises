@@ -481,7 +481,7 @@ button.minus::before {
 
 figcaption p > code {
   display: inline-block;
-  padding-inline: 0.2rem 0.4rem;
+  padding-inline: 0.3rem;
   background: #2a2138;
   color: #72f1b8;
   color: var(--m, #72f1b8);
