@@ -80,10 +80,10 @@
         <figure>
           <img src="img/grid-exercise-2.webp" alt="" />
           <figcaption>
-            <h2>Simpelt grid</h2>
+            <h2>Fleksibelt grid</h2>
             <p>
               Lav tre kolonner, hvor den midterste ikke fylder mere end dens
-              indhold.
+              indhold (se reference).
             </p>
             <ul class="hints">
               <li data-prop><code>grid-template-columns</code> (property)</li>
@@ -134,14 +134,14 @@
         <figure>
           <img src="img/grid-exercise-3.webp" alt="" />
           <figcaption>
-            <h2>Avanceret grid</h2>
+            <h2>Placér boks i grid</h2>
             <p>
-              Lav tre lige brede kolonner, hvor hver række er 50px.
-              <code>.box-2</code> skal spænde over to rækker og to kolonner,
-              samt begynde på række 2 og kolonne 2.
+              Lav tre lige brede kolonner, samt fire rækker, som hver er 50px.
+              <code>.box-2</code> skal spænde over to rækker og to kolonner, og
+              begynde på række 2 i kolonne 2.
             </p>
             <ul class="hints">
-              <li data-prop><code>grid-auto-rows</code> (property)</li>
+              <li data-prop><code>grid-template-rows</code> (property)</li>
               <li data-prop><code>grid-column</code> (property)</li>
               <li data-prop><code>grid-row</code> (property)</li>
               <li data-unit><code>span [n]</code> (value)</li>
@@ -194,17 +194,19 @@
         <figure>
           <img src="img/grid-exercise-3.webp" alt="" />
           <figcaption>
-            <h2>Avanceret grid</h2>
+            <h2>Flag med grid</h2>
+            <p><strong>Denne øvelse kan løses på flere måder.</strong></p>
             <p>
-              Lav tre lige brede kolonner, hvor hver række er 50px.
-              <code>.box-2</code> skal spænde over to rækker og to kolonner,
-              samt begynde på række 2 og kolonne 2.
+              Giv <code>.container</code> en højde på <code>250px</code>.
+              Definér derefter to kolonner (<code>1fr 1.5fr</code>) og tilføj
+              fire bokse. Brug <code>gap</code> til at indstille mellemrum
+              mellem boksene
             </p>
             <ul class="hints">
-              <li data-prop><code>grid-auto-rows</code> (property)</li>
-              <li data-prop><code>grid-column</code> (property)</li>
-              <li data-prop><code>grid-row</code> (property)</li>
-              <li data-unit><code>span [n]</code> (value)</li>
+              <li data-prop>
+                <code>height</code>/<code>block-size</code> (property)
+              </li>
+              <li data-prop><code>gap</code> (property)</li>
             </ul>
           </figcaption>
         </figure>
@@ -249,20 +251,22 @@
         <figure>
           <img src="img/grid-exercise-5.webp" alt="" />
           <figcaption>
-            <h2>Avanceret grid</h2>
+            <h2>Overlap bokse</h2>
             <p>
               Tilføj tre bokse og lav fire lige brede kolonner samt fire rækker
-              af 50px. Hver boks skal spænde over to rækker og to kolonner, og
-              skal overlappe hinanden (se reference billede).
+              af 50px (brug <code>repeat()-funktionen</code>). Hver boks skal
+              spænde over to rækker og to kolonner og skal overlappe hinanden
+              (se reference).
             </p>
             <p>
-              Tilføj derefter yderligere seks bokse, for at se, hvordan de
-              lægger sig ind i grid'et. Du kan evt. tilføje <code>gap</code>,
-              for at lave mellemrum mellem boksene.
+              Tilføj derefter yderligere seks bokse, for at se, hvordan disse
+              lægger sig i grid'et. Du kan evt. tilføje <code>gap</code>, for at
+              lave mellemrum mellem boksene.
             </p>
             <ul class="hints">
               <li data-prop><code>grid-column</code> (property)</li>
               <li data-prop><code>grid-row</code> (property)</li>
+              <li data-prop><code>gap</code> (property)</li>
               <li data-unit><code>repeat([n], [x])</code> (value)</li>
             </ul>
           </figcaption>

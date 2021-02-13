@@ -177,10 +177,10 @@ sections.forEach((section, i) => {
 
 //   let keys = Object.keys(localStorage);
 //   for (let key of keys) {
-//     array.push(`${key}:\n${localStorage.getItem(key)}\n\n`);
+//     array.push(`Exercise ${key}:\n${localStorage.getItem(key)}`);
 //   }
-
-//   download("exercises.txt", array);
+//   const copy = [...array].filter((el) => !el.includes("box")).join("\n\n");
+//   download("exercises.txt", copy);
 // });
 
 // function download(filename, text) {
