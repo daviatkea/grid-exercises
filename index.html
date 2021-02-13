@@ -11,7 +11,7 @@
     />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/prism.css" />
-    <link rel="stylesheet" href="css/custom.css?v=1.0.9" />
+    <link rel="stylesheet" href="css/custom.css?v=2.0.0" />
   </head>
   <body>
     <header class="main-header">
@@ -257,6 +257,74 @@
           <figcaption>
             <h2>Overlap bokse</h2>
             <p>
+              Tilføj otte bokse og lav fire lige brede kolonner samt tre rækker
+              af <code data-unit>1fr</code> (brug
+              <code data-unit>repeat()</code>-funktionen).
+            </p>
+            <p>
+              Lad <code>.box-1</code> spænde over 2 rækker og 2 kolonner, og lad
+              <code>.box-4</code> spænde over 2 rækker. Du kan evt. tilføje
+              <code>gap</code>, for at lave mellemrum mellem boksene.
+            </p>
+            <ul class="hints">
+              <li data-prop><code>grid-column</code> (property)</li>
+              <li data-prop><code>grid-row</code> (property)</li>
+              <li data-prop><code>gap</code> (property)</li>
+              <li data-unit><code>repeat([n], [x])</code> (value)</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <div class="controls">
+          <div>
+            <button type="button" class="plus">Add box</button>
+            <button type="button" class="minus">Remove box</button>
+          </div>
+        </div>
+
+        <article class="output">
+          <div class="container">
+            <div contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <button class="reset">
+            <svg aria-hidden="true" width="15" height="15">
+              <use href="#reset-icon" />
+            </svg>
+          </button>
+          <textarea
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+            class="prism-live language-css"
+          >
+.container {
+  
+}
+
+.box-1 {
+  
+}
+
+.box-4 {
+  
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section>
+        <div class="small-label">Øvelse</div>
+
+        <figure>
+          <img src="img/grid-exercise-6.webp" alt="" />
+          <figcaption>
+            <h2>Overlap bokse</h2>
+            <p>
               Tilføj tre bokse og lav fire lige brede kolonner samt fire rækker
               af 50px (brug <code data-unit>repeat()</code>-funktionen). Hver
               boks skal spænde over to rækker og to kolonner og skal overlappe
@@ -264,8 +332,9 @@
             </p>
             <p>
               Tilføj derefter yderligere seks bokse, for at se, hvordan disse
-              lægger sig i grid'et. Du kan evt. tilføje <code>gap</code>, for at
-              lave mellemrum mellem boksene.
+              lægger sig i grid'et. Du kan evt. tilføje et
+              <code data-unit>10px</code>-<code>gap</code>, for at lave
+              mellemrum mellem boksene.
             </p>
             <ul class="hints">
               <li data-prop><code>grid-column</code> (property)</li>
