@@ -211,7 +211,8 @@ section .controls {
 
 section figure {
   display: inherit;
-  grid-template-columns: inherit;
+  /* grid-template-columns: inherit; */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: inherit;
 }
 
@@ -513,4 +514,17 @@ code {
   font-family: "Roboto Mono", Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
     monospace !important;
   font-weight: 500;
+}
+
+.message {
+  background: #f97e72;
+  color: #2a2139;
+  padding: 1rem;
+  text-align: center;
+}
+
+@supports (padding-inline: 10px) {
+  .message {
+    display: none;
+  }
 }
