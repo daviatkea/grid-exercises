@@ -297,6 +297,10 @@ article > div {
   gap: 1px;
 }
 
+[data-gap-reset] article > div {
+  gap: 1px 0;
+}
+
 .box {
   display: grid;
   place-content: center;
