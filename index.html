@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="css/custom.css?v=2.0.0" />
   </head>
   <body>
-    <div class="message"><p>Please use Chrome or Firefox to complete these exercises!</p></div>
+    <div class="message">
+      <p>Please use Chrome or Firefox to complete these exercises!</p>
+    </div>
     <header class="main-header">
       <h1 aria-label="CSS Exercises">
         Exer<span class="stroke-text">CSS</span>ises
@@ -263,6 +265,7 @@
               <code>.box-4</code> spænde over 2 rækker. Du kan evt. tilføje
               <code>gap</code>, for at lave mellemrum mellem boksene.
             </p>
+            <p>
               Træk i vinduet med dine bokse (nederst i højre hjørne
               <span class="resize">↖</span>), for at se, hvordan grid'et opfører
               sig i forskellige størrelser.
@@ -400,11 +403,20 @@
           <figcaption>
             <h2>Stabling (stacking)</h2>
             <p>
-              Giv <code>.container</code> en højde på <code data-unit>250px</code> og gør denne til en grid-container. Tilføj derefter én boks, så der i alt er to bokse.
+              Giv <code>.container</code> en højde på
+              <code data-unit>250px</code> og gør denne til en grid-container.
+              Tilføj derefter én boks, så der i alt er to bokse.
             </p>
-            <p>Både <code>.box-1</code> og <code>.box-2</code> skal starte på hhv. række 1 og kolonne 1. Derudover skal <code>.box-2</code> have baggrundsfarven <code data-unit>honeydew</code> og placeres i midten vha. <code>justify-self</code> og <code>align-self</code>.</p>
+            <p>
+              Både <code>.box-1</code> og <code>.box-2</code> skal starte på
+              hhv. række 1 og kolonne 1. Derudover skal <code>.box-2</code> have
+              baggrundsfarven <code data-unit>honeydew</code> og placeres i
+              midten vha. <code>justify-self</code> og <code>align-self</code>.
+            </p>
             <ul class="hints">
-              <li data-prop><code>height</code>/<code>block-size</code> (property)</li>
+              <li data-prop>
+                <code>height</code>/<code>block-size</code> (property)
+              </li>
               <li data-prop><code>align-self</code> (property)</li>
               <li data-prop><code>justify-self</code> (property)</li>
               <li data-unit><code>center</code> (value)</li>
@@ -440,6 +452,70 @@
           >
 .container {
   
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section>
+        <div class="small-label">Øvelse</div>
+
+        <figure>
+          <video muted loop autoplay playsinline preload="metadata">
+            <source src="vid/ex8.webm" type="video/webm" />
+            <source src="vid/ex8.mp4#t=0.1" type="video/mp4" />
+          </video>
+          <figcaption>
+            <h2>Fluid layout</h2>
+            <p>
+              Lav tre kolonner, hvor den første og sidste kolonne optager lige
+              meget plads (<code data-unit>1fr</code>). Angiv en rækkevidde
+              mellem <code data-unit>0</code> (min) og
+              <code data-unit>300px</code> (max) via funktionen
+              <code data-unit>minmax()</code> til den midterste kolonne.
+              <code>.box-1</code> skal begynde på kolonne-linje 2 og slutte på
+              kolonne-linje 3.
+            </p>
+            <p>
+              Træk i vinduet med din boks (nederst i højre hjørne
+              <span class="resize">↖</span>), for at se, hvordan grid'et opfører
+              sig i forskellige størrelser. <code>.box-1</code> skal forblive
+              <code data-unit>300px</code> i bredden, indtil der ikke er mere
+              plads, hvorefter den kun skal være så bred som parent-containeren.
+            </p>
+            <ul class="hints">
+              <li data-prop><code>grid-template-columns</code> (property)</li>
+              <li data-unit><code>minmax([n], [n])</code> (value)</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <article class="output">
+          <div class="container">
+            <div contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <button class="reset">
+            <svg aria-hidden="true" width="15" height="15">
+              <use href="#reset-icon" />
+            </svg>
+          </button>
+          <textarea
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+            class="prism-live language-css"
+          >
+.container {
+  
+}
+
+.box-1 {
+
 }</textarea
           >
           <style class="style"></style>
