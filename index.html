@@ -395,76 +395,13 @@
         </div>
       </section>
 
-      <section>
-        <div class="small-label">Øvelse</div>
-
-        <figure>
-          <img src="img/grid-exercise-7.webp" alt="" />
-          <figcaption>
-            <h2>Stabling (stacking)</h2>
-            <p>
-              Giv <code>.container</code> en højde på
-              <code data-unit>250px</code> og gør denne til en grid-container.
-              Tilføj derefter én boks, så der i alt er to bokse.
-            </p>
-            <p>
-              Både <code>.box-1</code> og <code>.box-2</code> skal starte på
-              hhv. række 1 og kolonne 1. Derudover skal <code>.box-2</code> have
-              baggrundsfarven <code data-unit>honeydew</code> og placeres i
-              midten vha. <code>justify-self</code> og <code>align-self</code>.
-            </p>
-            <ul class="hints">
-              <li data-prop>
-                <code>height</code>/<code>block-size</code> (property)
-              </li>
-              <li data-prop><code>align-self</code> (property)</li>
-              <li data-prop><code>justify-self</code> (property)</li>
-              <li data-unit><code>center</code> (value)</li>
-            </ul>
-          </figcaption>
-        </figure>
-
-        <div class="controls">
-          <div>
-            <button type="button" class="plus">Add box</button>
-            <button type="button" class="minus">Remove box</button>
-          </div>
-        </div>
-
-        <article class="output">
-          <div class="container">
-            <div contenteditable></div>
-          </div>
-        </article>
-
-        <div class="editor">
-          <button class="reset">
-            <svg aria-hidden="true" width="15" height="15">
-              <use href="#reset-icon" />
-            </svg>
-          </button>
-          <textarea
-            autocorrect="off"
-            autocomplete="off"
-            spellcheck="false"
-            autocapitalize="off"
-            class="prism-live language-css"
-          >
-.container {
-  
-}</textarea
-          >
-          <style class="style"></style>
-        </div>
-      </section>
-
       <section data-gap-reset>
         <div class="small-label">Øvelse</div>
 
         <figure>
           <video muted loop autoplay playsinline preload="metadata">
-            <source src="vid/ex8-1.webm" type="video/webm" />
-            <source src="vid/ex8-1.mp4#t=0.1" type="video/mp4" />
+            <source src="vid/ex7.webm" type="video/webm" />
+            <source src="vid/ex7.mp4#t=0.1" type="video/mp4" />
           </video>
           <figcaption>
             <h2>Fluid layout</h2>
@@ -496,6 +433,69 @@
           <div class="container">
             <div class="box box-1" contenteditable></div>
             <div class="box box-2" contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <button class="reset">
+            <svg aria-hidden="true" width="15" height="15">
+              <use href="#reset-icon" />
+            </svg>
+          </button>
+          <textarea
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+            class="prism-live language-css"
+          >
+.container {
+  
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section>
+        <div class="small-label">Øvelse</div>
+
+        <figure>
+          <img src="img/" alt="" />
+          <figcaption>
+            <h2>Centrer boks i container</h2>
+            <p>
+              Giv <code>.container</code> en minimumshøjde på
+              <code data-unit>200px</code> og gør denne til en grid-container.
+              Brug <code>place-content</code> til at placere
+              <code>.box-1</code> i midten containeren.
+            </p>
+            <!-- <p>
+              Både <code>.box-1</code> og <code>.box-2</code> skal starte på
+              hhv. række 1 og kolonne 1. Derudover skal <code>.box-2</code> have
+              baggrundsfarven <code data-unit>honeydew</code> og placeres i
+              midten vha. <code>justify-self</code> og <code>align-self</code>.
+            </p> -->
+            <ul class="hints">
+              <li data-prop>
+                <code>min-height</code>/<code>min-block-size</code> (property)
+              </li>
+              <li data-prop><code>place-content</code> (property)</li>
+              <li data-unit><code>center</code> (value)</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <div class="controls">
+          <div>
+            <button type="button" class="plus">Add box</button>
+            <button type="button" class="minus">Remove box</button>
+          </div>
+        </div>
+
+        <article class="output">
+          <div class="container">
+            <div contenteditable></div>
           </div>
         </article>
 
