@@ -404,7 +404,7 @@
             <source src="vid/ex7.mp4#t=0.1" type="video/mp4" />
           </video>
           <figcaption>
-            <h2>Fluid layout</h2>
+            <h2>Flydende layout</h2>
             <p>
               Lav tre kolonner, hvor den første og sidste kolonne optager lige
               meget plads (<code data-unit>1fr</code>). Angiv en rækkevidde
@@ -464,12 +464,17 @@
         <figure>
           <img src="img/grid-exercise-8.webp" alt="" />
           <figcaption>
-            <h2>Centrer boks i container</h2>
+            <h2>Centrér boks i container</h2>
             <p>
-              Giv <code>.container</code> en minimumshøjde på
-              <code data-unit>180px</code> og gør denne til en grid-container.
-              Brug <code>place-content</code> til at placere
+              Gør <code>.container</code> til en grid-container, og brug
+              derefter <code>place-content</code> til at placere
               <code>.box-1</code> i midten containeren.
+            </p>
+            <p>
+              Placér derefter <code>.box-1</code> forskellige steder i
+              containeren vha. <code data-unit>start</code>,
+              <code data-unit>end</code> og <code data-unit>stretch</code>.
+              <code>place-content</code> kan håndtere to værdier.
             </p>
             <!-- <p>
               Både <code>.box-1</code> og <code>.box-2</code> skal starte på
@@ -478,9 +483,6 @@
               midten vha. <code>justify-self</code> og <code>align-self</code>.
             </p> -->
             <ul class="hints">
-              <li data-prop>
-                <code>min-height</code>/<code>min-block-size</code> (property)
-              </li>
               <li data-prop><code>place-content</code> (property)</li>
               <li data-unit><code>center</code> (value)</li>
             </ul>
@@ -494,7 +496,67 @@
           </div>
         </div>
 
-        <article class="output">
+        <article class="output" style="height: 180px">
+          <div class="container">
+            <div contenteditable></div>
+          </div>
+        </article>
+
+        <div class="editor">
+          <button class="reset">
+            <svg aria-hidden="true" width="15" height="15">
+              <use href="#reset-icon" />
+            </svg>
+          </button>
+          <textarea
+            autocorrect="off"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+            class="prism-live language-css"
+          >
+.container {
+  
+}</textarea
+          >
+          <style class="style"></style>
+        </div>
+      </section>
+
+      <section data-bg-image>
+        <div class="small-label">Øvelse</div>
+
+        <figure>
+          <img src="img/grid-exercise-9.webp" alt="" />
+          <figcaption>
+            <h2>Placér bokse</h2>
+            <p>
+              Definér et grid med fem kolonner og fire rækker. Du bestemmer selv
+              størrelsen på kolonnerne, men det anbefales, at du bruger
+              forskellige fractions (<code data-unit>[n]fr</code>). Første række
+              skal være <code data-unit>1fr</code>, og sidste række skal være
+              <code data-unit>30px</code>. De øvrige to rækker skal være
+              <code data-unit>auto</code>.
+            </p>
+            <p>
+              Placér efterfølgende to bokse på hhv. række 2 og 3, og lad dem
+              hver især spænde over to eller tre kolonner. Sørg for, at de to
+              bokse begynder på hver deres kolonne-linje.
+            </p>
+            <ul class="hints">
+              <li>Du er på egen hånd</li>
+            </ul>
+          </figcaption>
+        </figure>
+
+        <div class="controls">
+          <div>
+            <button type="button" class="plus">Add box</button>
+            <button type="button" class="minus">Remove box</button>
+          </div>
+        </div>
+
+        <article class="output" style="height: 350px">
           <div class="container">
             <div contenteditable></div>
           </div>
