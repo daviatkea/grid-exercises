@@ -203,6 +203,7 @@ section .controls {
   height: 2px;
   width: 1.5rem;
   background: #5000ca;
+  background: currentColor;
 }
 
 .small-label::after {
@@ -538,4 +539,22 @@ code {
   .message {
     display: none;
   }
+}
+
+[data-konami="true"] body {
+  background: #fff;
+}
+
+[data-konami="true"] section {
+  background: #2a2139;
+  color: #fff;
+  border: 2px solid #fb28a8;
+}
+
+[data-konami="true"] section .small-label {
+  color: #fff;
+}
+
+[data-konami="true"] section .editor {
+  border: 2px solid #fb28a8;
 }
