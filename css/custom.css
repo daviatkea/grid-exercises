@@ -262,7 +262,8 @@ section .hints::before {
 }
 
 [data-unit] {
-  --m: rgb(249, 42, 173);
+  /* --m: rgb(249, 42, 173); */
+  --m: rgb(255 47 179);
 }
 
 .output {
