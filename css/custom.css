@@ -111,6 +111,7 @@ footer {
 
 .main-header h1 {
   background: #2a2139;
+  background: red;
   will-change: transform;
   padding-inline: 1rem;
   border-radius: 8px;
