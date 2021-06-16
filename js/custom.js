@@ -10,7 +10,7 @@ function observeHeader() {
 observeHeader();
 
 const heading = document.querySelector("h1");
-heading.addEventListener("click", ({ target }) => {
+heading.addEventListener("click", () => {
   const span = heading.querySelector("span");
   span.classList.toggle("toggled");
 });
@@ -53,6 +53,7 @@ sections.forEach((section, i) => {
       _tA.value = startingCSS;
       _tA.focus(); /* ensure that the UI updates */
       reset.disabled = true;
+      init();
     } else {
       reset.disabled = false;
     }
@@ -132,6 +133,8 @@ sections.forEach((section, i) => {
     //   "exercise-" + section.querySelector("article>div").className;
     // const parentDataset = `${i + 1}`;
     section.dataset.exerciseKey = `${i + 1}`;
+
+    styleTag.innerHTML = prefix(_tA.value);
 
     if (localStorage.getItem(exerciseKey)) {
       _tA.value = localStorage.getItem(exerciseKey);
