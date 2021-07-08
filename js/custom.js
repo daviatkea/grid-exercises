@@ -141,6 +141,14 @@ sections.forEach((section, i) => {
       styleTag.innerHTML = prefix(_tA.value);
     }
 
+    if (
+      localStorage.getItem("7") ||
+      localStorage.getItem("8") ||
+      localStorage.getItem("9")
+    ) {
+      document.documentElement.dataset.extra = "true";
+    }
+
     if (localStorage.getItem(boxKey)) {
       boxes = localStorage.getItem(boxKey);
       for (let i = 0; i < boxes; i++) {
@@ -226,6 +234,6 @@ document.addEventListener("keyup", function (e) {
   konamiString = konamiCode.join("");
 
   if (keySequence.join("").includes(konamiString)) {
-    document.documentElement.dataset.konami = "true";
+    document.documentElement.dataset.extra = "true";
   }
 });

@@ -552,7 +552,12 @@ code {
   }
 }
 
-[data-konami="true"] body {
+html:not([data-extra="true"])
+  :is([data-exercise-key="7"], [data-exercise-key="8"], [data-exercise-key="9"]) {
+  display: none;
+}
+
+/* [data-konami="true"] body {
   background: #fff;
 }
 
@@ -568,4 +573,4 @@ code {
 
 [data-konami="true"] section .editor {
   border: 2px solid #fb28a8;
-}
+} */
