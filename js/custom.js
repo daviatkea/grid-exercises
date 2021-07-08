@@ -233,7 +233,14 @@ document.addEventListener("keyup", function (e) {
   );
   konamiString = konamiCode.join("");
 
-  if (keySequence.join("").includes(konamiString)) {
+  if (
+    keySequence.join("").includes(konamiString) &&
+    !document.documentElement.dataset.extra
+  ) {
     document.documentElement.dataset.extra = "true";
+
+    document
+      .querySelector("section[data-exercise-key='7']")
+      .scrollIntoView({ behavior: "smooth" });
   }
 });
